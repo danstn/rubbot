@@ -1,11 +1,5 @@
 # spec/acceptance/simulate_movement.feature
 
-# Scenario #1:
-# - PLACE 0,0,NORTH
-# - MOVE
-# - REPORT
-# => 0,1,NORTH
-
 Feature: Simulating Movement
   Background:
     Given there is a grid 5 by 5
