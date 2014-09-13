@@ -11,6 +11,14 @@ step "the robot moves" do
   @robot.move
 end
 
+step "the robot turns left" do
+  @robot.rotate_left
+end
+
+step "the robot turns right" do
+  @robot.rotate_right
+end
+
 step "the robot should be at (:x,:y) facing :orientation" do |x, y, orientation|
   position = Position.new(x.to_i, y.to_i, Position.const_get(orientation.upcase))
   expect(@robot.position).to eq(position)

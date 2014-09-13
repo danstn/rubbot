@@ -11,4 +11,12 @@ class Robot
   def move
     @position = @position.advance
   end
+
+  def rotate_left
+    @position = @position.left
+  end
+
+  def rotate_right
+    @position = @position.right
+  end
 end
