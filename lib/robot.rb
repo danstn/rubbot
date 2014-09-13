@@ -5,7 +5,8 @@ class Robot
   attr_accessor :position
 
   def initialize(grid)
-    @grid = grid
+    @grid     = grid
+    @position = Position.new(nil, nil, nil)
   end
 
   def move
@@ -18,6 +19,10 @@ class Robot
 
   def rotate_right
     update_position @position.right
+  end
+
+  def placed?
+    @position.valid? @grid
   end
 
   private
