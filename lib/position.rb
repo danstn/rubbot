@@ -11,7 +11,7 @@ class Position < Struct.new(:x, :y, :orientation)
     when EAST
       Position.new(x + 1, y, orientation)
     when SOUTH
-      pos = Position.new(x, y - 1, orientation)
+      Position.new(x, y - 1, orientation)
     when WEST
       Position.new(x - 1, y, orientation)
     end
