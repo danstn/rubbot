@@ -123,4 +123,55 @@ describe Position do
       end
     end
   end
+
+  describe "#valid?" do
+    let(:grid) { Grid.new(4, 4) }
+    let(:max_x) { grid.width - 1 }
+    let(:max_y) { grid.height - 1 }
+
+    context "when within grid size" do
+      let(:position) { Position.new(2, 2, Position::NORTH) }
+      it "is valid" do expect(position.valid? grid).to be_truthy end
+    end
+
+    context "when at the edge (South-West)" do
+      let(:position) { Position.new(0, 0, Position::NORTH) }
+      it "is valid" do expect(position.valid? grid).to be_truthy end
+    end
+
+    context "when at the edge (North-West)" do
+      let(:position) { Position.new(0, max_y, Position::NORTH) }
+      it "is valid" do expect(position.valid? grid).to be_truthy end
+    end
+
+    context "when at the edge (North-East)" do
+      let(:position) { Position.new(max_x, 0, Position::NORTH) }
+      it "is valid" do expect(position.valid? grid).to be_truthy end
+    end
+
+    context "when at the edge (South-East)" do
+      let(:position) { Position.new(max_x, max_y, Position::NORTH) }
+      it "is valid" do expect(position.valid? grid).to be_truthy end
+    end
+
+    context "when beyound top edge" do
+      let(:position) { Position.new(2, max_y + 2, Position::NORTH) }
+      it "is invalid" do expect(position.valid? grid).to be_falsy end
+    end
+
+    context "when beyound right edge" do
+      let(:position) { Position.new(max_x + 2, 2, Position::NORTH) }
+      it "is invalid" do expect(position.valid? grid).to be_falsy end
+    end
+
+    context "when beyound bottom edge" do
+      let(:position) { Position.new(2, -2, Position::NORTH) }
+      it "is invalid" do expect(position.valid? grid).to be_falsy end
+    end
+
+    context "when beyound left edge" do
+      let(:position) { Position.new(-2, 2, Position::NORTH) }
+      it "is invalid" do expect(position.valid? grid).to be_falsy end
+    end
+  end
 end
