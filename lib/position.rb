@@ -1,9 +1,10 @@
 class Position < Struct.new(:x, :y, :orientation)
-  attr_reader :x, :y, :orientation
-
   NORTH = :north
 
   def advance
-    self
+    case orientation
+    when NORTH
+      pos = Position.new(x, y + 1, orientation)
+    end
   end
 end
