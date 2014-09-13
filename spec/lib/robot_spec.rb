@@ -1,9 +1,10 @@
 require 'robot'
 
 describe Robot do
+  subject(:grid) { Grid.new(5, 5) }
 
   describe "::new" do
-    subject(:robot) { Robot.new }
+    subject(:robot) { Robot.new(grid) }
 
     it "creates an instance of Robot" do
       expect(robot).to be_a Robot
@@ -11,7 +12,7 @@ describe Robot do
   end
 
   describe "#position" do
-    subject(:robot) { Robot.new }
+    subject(:robot) { Robot.new(grid) }
 
     it "sets a position" do
       robot.position = Position.new(1, 2, Position::WEST)
@@ -20,7 +21,7 @@ describe Robot do
   end
 
   describe "#move" do
-    subject(:robot) { Robot.new }
+    subject(:robot) { Robot.new(grid) }
 
     it "changes the position of the robot" do
       robot.position = Position.new(0, 0, Position::NORTH)
@@ -30,7 +31,7 @@ describe Robot do
   end
 
   describe "#rotate_left" do
-    subject(:robot) { Robot.new }
+    subject(:robot) { Robot.new(grid) }
 
     it "rotates left" do
       robot.position = Position.new(0, 0, Position::NORTH)
@@ -40,7 +41,7 @@ describe Robot do
   end
 
   describe "#rotate_right" do
-    subject(:robot) { Robot.new }
+    subject(:robot) { Robot.new(grid) }
 
     it "rotates right" do
       robot.position = Position.new(0, 0, Position::NORTH)

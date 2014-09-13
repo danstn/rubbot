@@ -25,6 +25,10 @@ class Position < Struct.new(:x, :y, :orientation)
     rotate 1
   end
 
+  def valid?(grid)
+    (0...grid.width).include?(x) && (0...grid.height).include?(y)
+  end
+
   private
 
   def rotate(by)

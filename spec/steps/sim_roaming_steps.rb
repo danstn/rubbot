@@ -3,7 +3,7 @@ step "there is a grid :n by :m" do |n, m|
 end
 
 step "a robot placed at (:x,:y) facing :orientation" do |x, y, orientation|
-  @robot = Robot.new
+  @robot = Robot.new(@grid)
   @robot.position = Position.new(x.to_i, y.to_i, Position.const_get(orientation.upcase))
 end
 

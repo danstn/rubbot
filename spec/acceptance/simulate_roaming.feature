@@ -26,6 +26,11 @@ Feature: Simulating Roaming (Movement & Rotation)
     When the robot moves
     Then the robot should be at (1,2) facing west
 
+  Scenario: Invalid move
+    Given a robot placed at (0,0) facing south
+    When the robot moves
+    Then the robot should be at (0,0) facing south
+
   # Rotations
   Scenario: Turning left
     Given a robot placed at (2,2) facing north
