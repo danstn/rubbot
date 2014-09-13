@@ -36,5 +36,4 @@ class Position < Struct.new(:x, :y, :orientation)
   def orientations
     [NORTH, EAST, SOUTH, WEST]
   end
-
 end

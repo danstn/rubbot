@@ -62,3 +62,14 @@ Feature: Simulating Roaming (Movement & Rotation)
     Then the robot should be at (2,2) facing east
     And the robot turns left
     Then the robot should be at (2,2) facing north
+
+  # Combination of moving and turning
+  Scenario: Moving & Turning
+    Given a robot placed at (2,2) facing north
+    When the robot turns right
+    And the robot moves
+    And the robot turns right
+    And the robot moves
+    And the robot moves
+    And the robot turns left
+    Then the robot should be at (3,0) facing east
