@@ -1,8 +1,8 @@
 class Position < Struct.new(:x, :y, :orientation)
   NORTH = :north
   EAST  = :east
-  WEST  = :west
   SOUTH = :south
+  WEST  = :west
 
   def advance
     case orientation
@@ -10,10 +10,10 @@ class Position < Struct.new(:x, :y, :orientation)
       Position.new(x, y + 1, orientation)
     when EAST
       Position.new(x + 1, y, orientation)
+    when SOUTH
+      pos = Position.new(x, y - 1, orientation)
     when WEST
       Position.new(x - 1, y, orientation)
-    when SOUTH
-      Position.new(x, y - 1, orientation)
     end
   end
 

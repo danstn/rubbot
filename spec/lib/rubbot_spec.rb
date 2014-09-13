@@ -1,12 +1,10 @@
 require 'rubbot'
 
 describe Rubbot do
-  describe "Initialization" do
-    subject(:rubbot) do
-      Rubbot.new
-    end
+  describe "::new" do
+    subject(:rubbot) { Rubbot.new }
 
-    it "- is an instance of Rubbot" do
+    it "creates an instance of Rubbot" do
       expect(rubbot).to be_a Rubbot
     end
   end
