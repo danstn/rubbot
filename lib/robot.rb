@@ -8,19 +8,21 @@ class Robot
     @grid = grid
   end
 
-  def position=(position)
-    @position = position
-  end
-
   def move
-    @position = @position.advance if @position.advance.valid? @grid
+    update_position @position.advance
   end
 
   def rotate_left
-    @position = @position.left
+    update_position @position.left
   end
 
   def rotate_right
-    @position = @position.right
+    update_position @position.right
+  end
+
+  private
+
+  def update_position(new_position)
+    @position = new_position if new_position.valid? @grid
   end
 end
