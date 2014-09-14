@@ -8,7 +8,8 @@ end
 
 step "a robot placed at (:x,:y) facing :orientation" do |x, y, orientation|
   @robot = Robot.new(@grid)
-  @robot.position = Position.new(x.to_i, y.to_i, Position.const_get(orientation.upcase))
+  position = Position.new(x.to_i, y.to_i, Position.const_get(orientation.upcase))
+  @robot.place position
 end
 
 step "the robot moves" do

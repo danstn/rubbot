@@ -2,7 +2,7 @@ require_relative 'grid'
 require_relative 'position'
 
 class Robot
-  attr_accessor :position
+  attr_reader :position
 
   UNPLACED_NOTICE = "Robot should be placed first."
 
