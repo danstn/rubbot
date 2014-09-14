@@ -1,6 +1,10 @@
 module RobotInterface
-  class Command < Struct.new(:args)
+  class Command
     NoArgumentsError = Class.new(Exception)
+
+    def initialize(args = [])
+      @args = args
+    end
   end
 
   class Place < Command
@@ -48,9 +52,13 @@ module RobotInterface
     end
   end
 
-  class Help
-   def self.execute(options = {})
-      options.fetch(:output) << <<-END.gsub(/^ {8}/, '')
+  class Help < Command
+    def execute(robot, options = {})
+      options.fetch(:output) << self.class::print_help
+    end
+
+    def self.print_help
+      help_message = <<-END.gsub(/^ {8}/, '')
         Robot Commands:
         ------------------------------------------------------
         PLACE   Places the robot at X, Y facing an orientation
@@ -83,7 +91,7 @@ module Commands
   def self.parse(input)
     cmd, args = input.split
     args = String(args).split(",")
-    cmd_class = COMMANDS_MAP[cmd]
+    cmd_class = COMMANDS_MAP[String(cmd).upcase]
     raise NoCommandError.new "'#{cmd}'' is undefined." unless cmd_class
     cmd_class.new args
   end

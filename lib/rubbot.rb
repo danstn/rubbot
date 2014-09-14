@@ -22,7 +22,7 @@ class Rubbot
         cmd.execute(@robot, output: @stdout)
       rescue Commands::NoCommandError, RobotInterface::Place::InvalidFormatError => e
         @stdout << "Invalid input: #{e.message}\n"
-        RobotInterface::Help::execute(output: @stdout)
+        @stdout << RobotInterface::Help::print_help
       end
     end
   end
