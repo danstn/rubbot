@@ -105,3 +105,7 @@ REPORT
 
 # => 3,3,NORTH
 ```
+
+## License
+
+Rubbot is under the [MIT License](http://www.opensource.org/licenses/MIT).
