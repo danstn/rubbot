@@ -47,6 +47,24 @@ module RobotInterface
       output << robot.report + "\n"
     end
   end
+
+  class Help
+   def self.execute(options = {})
+      options.fetch(:output) << <<-END.gsub(/^ {8}/, '')
+        Robot Commands:
+        ------------------------------------------------------
+        PLACE   Places the robot at X, Y facing an orientation
+          Orientations accepted: NORTH, EAST, SOUTH, WEST
+          Format: 'X,Y,ORIENTATION'. i.e.: '2,3,NORTH'
+        MOVE    Moves the robot in current direction
+        LEFT    Turns the robot left
+        RIGHT   Turns the robot right
+        REPORT  Prints current state of the robot
+        HELP    Prints this help message
+        ------------------------------------------------------
+      END
+    end
+  end
 end
 
 module Commands
@@ -57,6 +75,7 @@ module Commands
     "LEFT"   => RobotInterface::Left,
     "RIGHT"  => RobotInterface::Right,
     "REPORT" => RobotInterface::Report,
+    "HELP"   => RobotInterface::Help
   }
 
   NoCommandError = Class.new(Exception)
