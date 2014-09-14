@@ -4,6 +4,8 @@ require_relative 'position'
 class Robot
   attr_accessor :position
 
+  UNPLACED_NOTICE = "Robot should be placed first."
+
   def initialize(grid)
     @grid     = grid
     @position = Position.new(nil, nil, nil)
@@ -26,6 +28,7 @@ class Robot
   end
 
   def report
+    return UNPLACED_NOTICE unless placed?
     @position.to_s
   end
 

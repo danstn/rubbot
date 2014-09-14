@@ -1,3 +1,9 @@
+# Trap early interrupts
+Signal.trap("INT") do
+  puts "Bye-bye!"
+  exit 1
+end
+
 require_relative 'rubbot_cli'
 require_relative 'robot'
 
@@ -11,8 +17,12 @@ class Rubbot
 
   def start
     while input = @stdin.gets
-      cmd = Commands::parse(input)
-      cmd.execute(@robot, output: @stdout)
+      begin
+        cmd = Commands::parse(input)
+        cmd.execute(@robot, output: @stdout)
+      rescue Commands::NoCommandError, RobotInterface::Place::InvalidFormatError => e
+        p "Invalid input. #{e.message}"
+      end
     end
   end
 end
