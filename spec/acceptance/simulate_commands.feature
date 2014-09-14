@@ -20,3 +20,19 @@ Feature: Simulating Commands
     And the input is "REPORT"
     And rubbot is started
     Then the output is "0,1,NORTH"
+
+  Scenario: Left command
+    When rubbot is setup
+    And the input is "PLACE 0,0,NORTH"
+    And the input is "LEFT"
+    And the input is "REPORT"
+    And rubbot is started
+    Then the output is "0,0,WEST"
+
+  Scenario: Right command
+    When rubbot is setup
+    And the input is "PLACE 0,0,NORTH"
+    And the input is "RIGHT"
+    And the input is "REPORT"
+    And rubbot is started
+    Then the output is "0,0,EAST"

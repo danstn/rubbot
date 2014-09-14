@@ -23,9 +23,15 @@ module RobotInterface
   end
 
   class Move < Command
-    def execute(robot, options = {})
-      robot.move
-    end
+    def execute(robot, options = {}) robot.move end
+  end
+
+  class Left < Command
+    def execute(robot, options = {}) robot.rotate_left end
+  end
+
+  class Right < Command
+    def execute(robot, options = {}) robot.rotate_right end
   end
 end
 
@@ -35,6 +41,8 @@ module Commands
     "PLACE"  => RobotInterface::Place,
     "REPORT" => RobotInterface::Report,
     "MOVE"   => RobotInterface::Move,
+    "LEFT"   => RobotInterface::Left,
+    "RIGHT"  => RobotInterface::Right,
   }
 
   NoCommandError = Class.new(Exception)
