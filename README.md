@@ -1,6 +1,11 @@
 Rubbot
 ======
 
+[![Gem Version](https://badge.fury.io/rb/rubbot.svg)](http://badge.fury.io/rb/rubbot)
+[![Code Climate](https://codeclimate.com/github/dzotokan/rubbot/badges/gpa.svg)](https://codeclimate.com/github/dzotokan/rubbot)
+[![Dependency Status](https://gemnasium.com/dzotokan/rubbot.svg)](https://gemnasium.com/dzotokan/rubbot)
+
+
 Toy Robot simulation implementation in Ruby.
 
 ## Usage
