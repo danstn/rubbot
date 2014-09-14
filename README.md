@@ -25,6 +25,17 @@ Toy Robot simulation implementation in Ruby.
   rubbot = Rubbot.new(grid)
   rubbot.start
   ```
+  
+## Tests
+### All
+  ```bash
+  $ rspec spec
+  ```
+### Specific
+  ```bash
+  $ rspec spec/lib/robot_spec.rb
+  $ rspec spec/acceptance/simulate_roaming.feature
+  ```
 
 ## Specification
 
