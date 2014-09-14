@@ -174,4 +174,9 @@ describe Position do
       it "is invalid" do expect(position.valid? grid).to be_falsy end
     end
   end
+
+  describe "#to_s" do
+    subject(:position) { Position.new(2, 2, Position::NORTH) }
+    it "prints a position" do expect(position.to_s).to eq("2,2,NORTH") end
+  end
 end
