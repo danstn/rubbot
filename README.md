@@ -3,6 +3,29 @@ Rubbot
 
 Toy Robot simulation implementation in Ruby.
 
+## Usage
+
+### Simple
+
+  ``` bash
+  $ chmod +x rubbot
+  $ ./rubbot
+  ```
+  
+### Advanced
+
+  ``` ruby
+  # Load the library
+  require_relative 'lib/rubbot'
+  
+  # Create a new grid
+  grid = Grid.new(5, 5)
+  
+  # Start the app
+  rubbot = Rubbot.new(grid)
+  rubbot.start
+  ```
+
 ## Specification
 
 ### Description
