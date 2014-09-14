@@ -21,6 +21,12 @@ module RobotInterface
       output << robot.report
     end
   end
+
+  class Move < Command
+    def execute(robot, options = {})
+      robot.move
+    end
+  end
 end
 
 module Commands
@@ -28,6 +34,7 @@ module Commands
   COMMANDS_MAP = {
     "PLACE"  => RobotInterface::Place,
     "REPORT" => RobotInterface::Report,
+    "MOVE"   => RobotInterface::Move,
   }
 
   NoCommandError = Class.new(Exception)
