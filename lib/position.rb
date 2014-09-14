@@ -31,6 +31,10 @@ class Position < Struct.new(:x, :y, :orientation)
     (0...grid.width).include?(x) && (0...grid.height).include?(y)
   end
 
+  def to_s
+    "#{x},#{y},#{orientation.to_s.upcase}"
+  end
+
   private
 
   def rotate(by)

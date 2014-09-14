@@ -1,7 +1,7 @@
 require 'robot'
 
 describe Robot do
-  subject(:grid) { Grid.new(5, 5) }
+  let(:grid) { Grid.new(5, 5) }
 
   describe "::new" do
     subject(:robot) { Robot.new(grid) }

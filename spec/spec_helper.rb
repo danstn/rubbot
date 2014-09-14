@@ -5,3 +5,4 @@ RSpec.configure do |config|
 end
 
 require 'rubbot'
+require 'utils'
