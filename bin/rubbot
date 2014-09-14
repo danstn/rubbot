@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/rubbot'
+require 'rubbot'
 
-# Init and run 'Rubbot'
 puts "Welcome to Rubbot!"
 puts "------------------"
+
+# Init and run 'Rubbot'
 rubbot = Rubbot.new(Grid.new(5, 5)) and rubbot.start
+

@@ -1,4 +1,5 @@
 require 'rubbot'
+require 'utils'
 
 describe Rubbot do
   let(:grid) { Grid.new(5, 5) }
