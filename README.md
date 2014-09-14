@@ -5,18 +5,28 @@ Toy Robot simulation implementation in Ruby.
 
 ## Usage
 
+### Gem
+
+  ``` bash
+  $ gem install rubbot
+  $ rubbot
+  ```
+
 ### Simple
 
   ``` bash
-  $ chmod +x rubbot
-  $ ./rubbot
+  $ ruby -Ilib ./bin/rubbot
   ```
   
-### Advanced
+### Manual
+
+  ``` bash
+  $ gem install rubbot
+  ```
 
   ``` ruby
   # Load the library
-  require_relative 'lib/rubbot'
+  require 'rubbot'
   
   # Create a new grid
   grid = Grid.new(5, 5)
