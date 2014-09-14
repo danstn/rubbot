@@ -3,6 +3,40 @@ Rubbot
 
 Toy Robot simulation implementation in Ruby.
 
+## Usage
+
+### Simple
+
+  ``` bash
+  $ chmod +x rubbot
+  $ ./rubbot
+  ```
+  
+### Advanced
+
+  ``` ruby
+  # Load the library
+  require_relative 'lib/rubbot'
+  
+  # Create a new grid
+  grid = Grid.new(5, 5)
+  
+  # Start the app
+  rubbot = Rubbot.new(grid)
+  rubbot.start
+  ```
+  
+## Tests
+### All
+  ```bash
+  $ rspec spec
+  ```
+### Specific
+  ```bash
+  $ rspec spec/lib/robot_spec.rb
+  $ rspec spec/acceptance/simulate_roaming.feature
+  ```
+
 ## Specification
 
 ### Description
@@ -71,3 +105,7 @@ REPORT
 
 # => 3,3,NORTH
 ```
+
+## License
+
+Rubbot is under the [MIT License](http://www.opensource.org/licenses/MIT).
