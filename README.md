@@ -17,7 +17,9 @@ Toy Robot simulation implementation in Ruby.
   $ rubbot
   ```
 
-### Simple
+### Direct
+
+Clone the repository and run directly with `lib` included
 
   ``` bash
   $ ruby -Ilib ./bin/rubbot
