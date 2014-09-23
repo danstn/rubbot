@@ -1,4 +1,4 @@
-require 'robot'
+require 'spec_helper'
 
 describe Robot do
   let(:grid) { Grid.new(5, 5) }

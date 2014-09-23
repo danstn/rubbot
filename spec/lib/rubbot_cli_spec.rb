@@ -1,4 +1,4 @@
-require 'rubbot_cli'
+require 'spec_helper'
 
 describe RobotInterface do
   let(:grid) { Grid.new(5, 5) }

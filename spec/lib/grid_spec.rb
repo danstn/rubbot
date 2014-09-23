@@ -1,4 +1,4 @@
-require 'grid'
+require 'spec_helper'
 
 describe Grid do
   describe "::new" do

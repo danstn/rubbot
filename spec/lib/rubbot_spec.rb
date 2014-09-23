@@ -1,5 +1,4 @@
-require 'rubbot'
-require 'utils'
+require 'spec_helper'
 
 describe Rubbot do
   let(:grid) { Grid.new(5, 5) }

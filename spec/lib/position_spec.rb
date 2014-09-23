@@ -1,4 +1,4 @@
-require 'position'
+require 'spec_helper'
 
 describe Position do
   it "has NORTH orientation" do
